@@ -32,13 +32,12 @@ Start building::
     ~/venv/geonode$ ./bin/buildout -N -c geoserver.cfg 
     ~/venv/geonode$ ./bin/buildout -N -c nginx.cfg 
 
-.. note:: the ``-N`` option prevents buildout from checking for newer versions
-        of eggs. It isn't really so important, just helps keeps things
-        predictable. 
+> The ``-N`` option prevents buildout from checking for newer versions
+  of eggs. It isn't really so important, just helps keeps things
+  predictable. 
 
-.. note::
-    Note that the individual buildouts will leave only the set in that config,
-    nuking the rest. To pick and choose parts, edit buildout.cfg
+> Note that the individual buildouts will leave only the set in that config,
+  nuking the rest. To pick and choose parts, edit buildout.cfg
 
 Coming soon, and caveats
 ------------------------
