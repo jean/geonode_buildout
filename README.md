@@ -25,6 +25,7 @@ Start building::
 
     ~/venv/geonode$ ./bin/buildout -N -c geonode-django.cfg 
     ~/venv/geonode$ ./bin/buildout -N -c postgis.cfg 
+    ~/venv/geonode$ ./bin/buildout -N -c geoserver.cfg 
 
 Coming soon, and caveats
 ------------------------
