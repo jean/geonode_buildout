@@ -31,6 +31,7 @@ Coming soon, and caveats
 
 I'm making this work before I make it pretty.
 The current setup may have local paths (e.g. my download-cache location)
-and brain damage (e.g. the django project dir created at the buildout root.
+and brain damage (e.g. the stub django project dir created at the buildout
+root).
 
 Buildout configs for nginx, uwsgi, tomcat, supervisord. etc. follow.
