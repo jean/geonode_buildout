@@ -1,36 +1,38 @@
 DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'NAME': '${config:geonode_database_default_name}',
-         'USER': '${config:geonode_database_default_user}',
-         'PASSWORD': '${config:geonode_database_default_password}',
+        'ENGINE':   'django.db.backends.postgresql_psycopg2',
+        'NAME':     '${config:geonode_database_default_name}',
+        'USER':     '${config:geonode_database_default_user}',
+        'PASSWORD': '${config:geonode_database_default_password}',
+        'HOST':     '${config:geonode_database_default_host}',
+        'PORT':     '${config:geonode_database_default_port}',
      },
     # vector datastore for uploads
-    'datastore' : {
-        'ENGINE': '${config:geonode_database_datastore_engine}',
-        'NAME': '${config:geonode_database_datastore_name}',
-        'USER' : '${config:geonode_database_datastore_user}',
-        'PASSWORD' : '${config:geonode_database_datastore_password}',
-        'HOST' : '${config:geonode_database_datastore_host}',
-        'PORT' : '${config:geonode_database_datastore_port}',
+    'datastore': {
+        'ENGINE':   'django.contrib.gis.db.backends.postgis',
+        'NAME':     '${config:geonode_database_datastore_name}',
+        'USER':     '${config:geonode_database_datastore_user}',
+        'PASSWORD': '${config:geonode_database_datastore_password}',
+        'HOST':     '${config:geonode_database_datastore_host}',
+        'PORT':     '${config:geonode_database_datastore_port}',
     }
 }
 
 # OGC (WMS/WFS/WCS) Server Settings
 OGC_SERVER = {
-    'default' : {
-        'BACKEND' : 'geonode.geoserver',
-        'LOCATION' : '${config:geoserver_internal_location}',
-        'PUBLIC_LOCATION' : '${config:geoserver_public_location}',
-        'USER' : '${config:geoserver_admin_user}',
-        'PASSWORD' : '${config:geoserver_admin_password}',
-        'MAPFISH_PRINT_ENABLED' : True,
-        'PRINTNG_ENABLED' : True,
-        'GEONODE_SECURITY_ENABLED' : True,
-        'GEOGIT_ENABLED' : False,
-        'WMST_ENABLED' : False,
+    'default': {
+        'BACKEND': 'geonode.geoserver',
+        'LOCATION': '${config:geoserver_internal_location}',
+        'PUBLIC_LOCATION': '${config:geoserver_public_location}',
+        'USER': '${config:geoserver_admin_user}',
+        'PASSWORD': '${config:geoserver_admin_password}',
+        'MAPFISH_PRINT_ENABLED': True,
+        'PRINTNG_ENABLED': True,
+        'GEONODE_SECURITY_ENABLED': True,
+        'GEOGIT_ENABLED': False,
+        'WMST_ENABLED': False,
         'BACKEND_WRITE_ENABLED': True,
-        'WPS_ENABLED' : False,
+        'WPS_ENABLED': False,
         # Set to name of database in DATABASES dictionary to enable
         'DATASTORE': '', #'datastore',
     }
