@@ -1,0 +1,4 @@
+# Our settings
+
+port = ${config:postgres_port}				# (change requires restart)
+hba_file = '${config:postgres_data_dir}/pg_hba.conf'	# host-based authentication file
