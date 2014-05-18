@@ -1,0 +1,14 @@
+#!/bin/bash
+# This script is run by Supervisor to start PostgreSQL 9.1 in foreground mode
+# http://stackoverflow.com/questions/11092358/running-postgresql-with-supervisord/22981366
+
+function shutdown()
+{
+    echo "Shutting down PostgreSQL"
+    pkill postgres
+}
+
+# Allow any signal which would kill a process to stop PostgreSQL
+trap shutdown HUP INT QUIT ABRT KILL ALRM TERM TSTP
+
+${postgres:location}postgres -D ${config:postgres_db_name} --config-file=${config:postgres_db_name}/postgresql.conf
