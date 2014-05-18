@@ -1,8 +1,8 @@
 ### Admin
-local   all         ${parts.config.postgres_admin_name}              peer
+local   all         ${config:postgres_admin_name}              trust
 
 ### Superusers
-local   all         ${parts.config.postgres_superuser_name}          trust
+local   all         ${config:postgres_superuser_name}          trust
 
 local   all         all                               peer
 host    all         all         127.0.0.1/32          md5
