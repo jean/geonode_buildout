@@ -1,0 +1,8 @@
+--- config.xml
++++ config.xml
+@@ -3,5 +3,5 @@
+   <name>geonodeAuthProvider</name>
+   <className>org.geonode.security.GeoNodeAuthenticationProvider</className>
+-  <baseUrl>http://localhost/</baseUrl>
++  <baseUrl>http://${config:geonode_hostname}:${config:geonode_port}/</baseUrl>
+ </org.geonode.security.GeoNodeAuthProviderConfig>
