@@ -37,3 +37,30 @@ OGC_SERVER = {
         'DATASTORE': '', #'datastore',
     }
 }
+
+# Reconcile with ``settings.py``
+from settings import MAP_BASELAYERS
+MAP_BASELAYERS[0]["source"]["url"] = (
+        OGC_SERVER['default']['PUBLIC_LOCATION'] +
+        "wms" if OGC_SERVER and any(OGC_SERVER) else
+        'http://localhost:8080/geoserver/wms')
+
+STATIC_ROOT = '${config:geonode_static}'
+STATIC_URL = '/static/'
+MEDIA_ROOT = '${config:geonode_uploaded}'
+MEDIA_URL = '/uploaded/'
+
+SITENAME = "${config:geonode_sitename}"
+SITEURL = "${config:geonode_public_url}"
+
+SERVER_EMAIL = '${config:geonode_server_email}'
+# pinax_theme_bootstrap_account/templates/account/password_reset.html
+THEME_ACCOUNT_CONTACT_EMAIL = '${config:geonode_contact_email}'
+DEFAULT_FROM_EMAIL = '${config:geonode_from_email}'
+EMAIL_HOST = '${config:geonode_email_host}'
+EMAIL_PORT = ${config:geonode_email_port}
+EMAIL_HOST_USER = '${config:geonode_email_user}'
+EMAIL_HOST_PASSWORD = '${config:geonode_email_password}'
+
+${config:geonode_extra_settings}
+
