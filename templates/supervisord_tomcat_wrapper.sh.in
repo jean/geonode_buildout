@@ -15,7 +15,7 @@ function shutdown()
 
 date
 echo "Starting Tomcat"
-export CATALINA_PID=${config:tomcat_socket_dir}
+export CATALINA_PID=${config:tomcat_socket_dir}/tomcat.pid
 # export JAVA_HOME=/usr/local/java
 # export LD_LIBRARY_PATH=/usr/local/apr/lib
 # export JAVA_OPTS="-Dcom.sun.management.jmxremote.port=8999 -Dcom.sun.management.jmxremote.password.file=/etc/tomcat.jmx.pwd -Dcom.sun.management.jmxremote.access.file=/etc/tomcat.jmxremote.access -Dcom.sun.management.jmxremote.ssl=false -Xms128m -Xmx3072m -XX:MaxPermSize=256m"
