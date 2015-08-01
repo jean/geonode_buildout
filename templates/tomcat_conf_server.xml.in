@@ -69,7 +69,8 @@
     -->
     <Connector port="${config:tomcat_connector_port}" protocol="HTTP/1.1"
                connectionTimeout="20000"
-               redirectPort="${config:tomcat_redirect_port}" />
+               redirectPort="${config:tomcat_redirect_port}"
+               maxThreads="50" />
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
